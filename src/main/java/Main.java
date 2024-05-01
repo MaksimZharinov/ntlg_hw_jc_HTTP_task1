@@ -1,4 +1,6 @@
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
@@ -13,5 +15,9 @@ public class Main {
                         .setRedirectsEnabled(false)
                         .build())
                 .build();
+
+        HttpGet request = new HttpGet("https://raw.githubusercontent.com" +
+                "/netology-code/jd-homeworks/master/http/task1/cats");
+        CloseableHttpResponse response = httpClient.execute(request);
     }
 }
