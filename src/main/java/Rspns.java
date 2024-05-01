@@ -5,7 +5,7 @@ public class Rspns {
     private String text;
     private String type;
     private String user;
-    private int upvotes;
+    private Integer upvotes;
 
     public Rspns(
             @JsonProperty("id") String id,
@@ -37,7 +37,7 @@ public class Rspns {
         return user;
     }
 
-    public int getUpvotes() {
+    public Integer getUpvotes() {
         return upvotes;
     }
 

@@ -28,5 +28,9 @@ public class Main {
 
         List<Rspns> rspnsList = mapper.readValue(response.getEntity().getContent(),
                 new TypeReference<List<Rspns>>() {});
+
+        rspnsList.stream()
+                .filter(value -> value.getUpvotes() != null && value.getUpvotes() > 0)
+                .forEach(System.out::println);
     }
 }
